@@ -7,6 +7,9 @@ Built with:
 - [Starlette](https://www.starlette.io/)
 - [Zoom](https://zoom.us)
 
+
+[Demo video](./docs/viam_on_air_demo.mp4)
+
 -----
 
 **Table of Contents**

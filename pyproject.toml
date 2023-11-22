@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "viam-on-air"
 dynamic = ["version"]
-description = 'An on-air notfifier when currently occupied by a meeting or video call'
+description = "An on-air notfifier when currently occupied by a meeting or video call"
 readme = "README.md"
 requires-python = ">=3.7"
 license = "Apache-2.0"
@@ -26,13 +26,14 @@ classifiers = [
 ]
 dependencies = [
   "viam-sdk",
-  "python-dotenv"
+  "starlette",
+  "uvicorn"
 ]
 
 [project.urls]
-Documentation = "https://github.com/unknown/viam-on-air#readme"
-Issues = "https://github.com/unknown/viam-on-air/issues"
-Source = "https://github.com/unknown/viam-on-air"
+Documentation = "https://github.com/hipsterbrown/viam-on-air#readme"
+Issues = "https://github.com/hipsterbrown/viam-on-air/issues"
+Source = "https://github.com/hipsterbrown/viam-on-air"
 
 [project.scripts]
 on-air = "viam_on_air:run"

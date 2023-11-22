@@ -56,7 +56,7 @@ class ZoomHandler:
         if participant["user_name"] != self._username:
             return JSONResponse({})
 
-        LOGGER.info(f"Welcome {participant["user_name"]}!")
+        LOGGER.info(f"Welcome {participant['user_name']}!")
         task = BackgroundTask(self._robot.set_color, color=(1.0, 0.0, 1.0))
         return JSONResponse({}, background=task)
 
@@ -65,19 +65,19 @@ class ZoomHandler:
         if participant["user_name"] != self._username:
             return JSONResponse({})
 
-        LOGGER.info(f"Goodbye {participant["user_name"]}!")
+        LOGGER.info(f"Goodbye {participant['user_name']}!")
         task = BackgroundTask(self._robot.set_color, color=(0.0, 1.0, 0.0))
         return JSONResponse({}, background=task)
 
     async def inform_participant(self):
         meeting = self._get_meeting()
-        LOGGER.info(f"Meeting {meeting["topic"]} has started!")
+        LOGGER.info(f"Meeting {meeting['topic']} has started!")
         task = BackgroundTask(self._robot.set_color, color=(0.0, 1.0, 1.0))
         return JSONResponse({}, background=task)
 
     async def dismiss_meeting(self):
         meeting = self._get_meeting()
-        LOGGER.info(f"Meeting {meeting["topic"]} has ended!")
+        LOGGER.info(f"Meeting {meeting['topic']} has ended!")
         task = BackgroundTask(self._robot.blink, color=(0.0, 1.0, 1.0))
         return JSONResponse({}, background=task)
 

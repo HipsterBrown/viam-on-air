@@ -4,7 +4,7 @@
 
 import uvicorn
 
-from viam_on_air.app import app
+from .app import app
 
 
 def run():

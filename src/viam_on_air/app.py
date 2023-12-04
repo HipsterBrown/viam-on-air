@@ -8,8 +8,8 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse, PlainTextResponse
 from starlette.routing import Route
 
-from viam_on_air.zoom_handler import ZoomHandler
-from viam_on_air.robot import create_robot, Robot
+from .zoom_handler import ZoomHandler
+from .robot import create_robot, Robot
 
 app_config = Config(".env")
 

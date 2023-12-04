@@ -7,7 +7,7 @@ from starlette.responses import JSONResponse, Response
 from starlette.background import BackgroundTask
 from viam.logging import getLogger
 
-from viam_on_air.robot import Robot
+from .robot import Robot
 
 LOGGER = getLogger(__name__)
 

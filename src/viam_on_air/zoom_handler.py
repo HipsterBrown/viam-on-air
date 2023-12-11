@@ -11,6 +11,11 @@ from .robot import Robot
 
 LOGGER = getLogger(__name__)
 
+RED = (0.0, 1.0, 1.0)
+GREEN = (1.0, 0.0, 1.0)
+BLUE = (1.0, 1.0, 0.0)
+PURPLE = (0.0, 1.0, 0.0)
+
 
 class ZoomHandler:
     _body: Mapping[str, Any] | None = None
@@ -57,7 +62,7 @@ class ZoomHandler:
             return JSONResponse({})
 
         LOGGER.info(f"Welcome {participant['user_name']}!")
-        task = BackgroundTask(self._robot.set_color, color=(1.0, 0.0, 1.0))
+        task = BackgroundTask(self._robot.set_color, color=RED)
         return JSONResponse({}, background=task)
 
     async def dismiss_participant(self):
@@ -66,19 +71,19 @@ class ZoomHandler:
             return JSONResponse({})
 
         LOGGER.info(f"Goodbye {participant['user_name']}!")
-        task = BackgroundTask(self._robot.set_color, color=(0.0, 1.0, 0.0))
+        task = BackgroundTask(self._robot.blink, color=RED)
         return JSONResponse({}, background=task)
 
     async def inform_participant(self):
         meeting = self._get_meeting()
         LOGGER.info(f"Meeting {meeting['topic']} has started!")
-        task = BackgroundTask(self._robot.set_color, color=(0.0, 1.0, 1.0))
+        task = BackgroundTask(self._robot.set_color, color=GREEN)
         return JSONResponse({}, background=task)
 
     async def dismiss_meeting(self):
         meeting = self._get_meeting()
         LOGGER.info(f"Meeting {meeting['topic']} has ended!")
-        task = BackgroundTask(self._robot.blink, color=(0.0, 1.0, 1.0))
+        task = BackgroundTask(self._robot.blink, color=PURPLE)
         return JSONResponse({}, background=task)
 
     async def _get_body(self):

@@ -108,10 +108,10 @@ The endpoint URL configured for the webhook should end in `/webhooks/zoom`, then
 
 Once the Zoom webhook-only app has been successfully activated, you can start joining some meetings and see the on-air light in action!
 
-Red = A meeting has started
-Green = You have joined the meeting
-Purple = You left the meeting
-Blinking Red for 5 seconds = The meeting has just ended
+Green = A meeting has started
+Red = You have joined the meeting
+Blinking Red for 5 seconds = You left the meeting
+Blinking Purple for 5 seconds = The meeting has just ended
 
 ## Development
 
